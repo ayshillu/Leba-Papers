@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kraft | LEBA Speciality Papers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+    <!-- FLOATING NAV (DESKTOP) -->
+    <nav class="nav-pill desktop-only">
+        <a href="index.html" class="logo">LEBA PAPERS</a>
+        <div class="nav-item">
+            <a href="company.html" class="nav-link">Company</a>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link" style="color: var(--color-accent);">Products</span>
+            <div class="dropdown-menu">
+                <!-- GRAPHIC SPECIALITY SECTION -->
+                <div class="mega-section">
+                    <div class="mega-title">GRAPHIC SPECIALITY</div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <div class="mega-subheader">Paper & Boards</div>
+                            <div class="mega-list">
+                                <a href="covering-papers.html" class="mega-link">Covering Papers</a>
+                                <a href="colored-boards.html" class="mega-link">Colored Boards</a>
+                                <a href="white-cream.html" class="mega-link">White & Cream</a>
+                                <a href="kraft.html" class="mega-link"
+                                    style="color: var(--color-accent); font-weight: 600;">Kraft</a>
+                                <a href="black-recycled.html" class="mega-link">Black & Recycled</a>
+                            </div>
+                        </div>
+                        <div class="mega-col">
+                            <div class="mega-subheader">Textures & Art</div>
+                            <div class="mega-list">
+                                <a href="textures.html" class="mega-link">Textures</a>
+                                <a href="recycled-papers.html" class="mega-link">Recycled Papers</a>
+                                <a href="art-papers.html" class="mega-link">Art Papers</a>
+                            </div>
+                        </div>
+                        <div class="mega-col">
+                            <div class="mega-subheader">Premium & Print</div>
+                            <div class="mega-list">
+                                <a href="premium-print.html" class="mega-link">Premium Print</a>
+                                <a href="textured-finish.html" class="mega-link">Textured Finish</a>
+                                <a href="coated-specialty.html" class="mega-link">Coated Specialty</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LABELS SECTION -->
+                <div class="mega-section">
+                    <div class="mega-title">LABELS</div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <div class="mega-subheader">Label Solutions</div>
+                            <div class="mega-list">
+                                <a href="products.html#paper-labels" class="mega-link">Paper Labels</a>
+                                <a href="products.html#film-labels" class="mega-link">Film Labels</a>
+                                <a href="products.html#special-labels" class="mega-link">Special Labels</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a href="applications.html" class="nav-link">Applications</a>
+        </div>
+        <div class="nav-item">
+            <a href="capabilities.html" class="nav-link">Capacity</a>
+        </div>
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.8rem;">Contact</a>
+    </nav>
+
+    <!-- MOBILE HEADER & OVERLAY (Refined Accordion) -->
+    <header class="mobile-header">
+        <a href="index.html" class="logo-mobile">LEBA PAPERS</a>
+        <button class="hamburger-btn" aria-label="Open Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" x2="21" y1="6" y2="6"></line>
+                <line x1="3" x2="21" y1="12" y2="12"></line>
+                <line x1="3" x2="21" y1="18" y2="18"></line>
+            </svg>
+        </button>
+    </header>
+
+    <div class="mobile-nav-overlay">
+        <div class="nav-overlay-header">
+            <span class="logo-mobile">LEBA PAPERS</span>
+            <button class="close-btn" aria-label="Close Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" x2="6" y1="6" y2="18"></line>
+                    <line x1="6" x2="18" y1="6" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="overlay-menu">
+            <div class="overlay-item">
+                <a href="company.html" class="overlay-link">
+                    Company
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Graphic Speciality Accordion -->
+            <div class="overlay-item mobile-dropdown is-expanded">
+                <button class="overlay-link" style="color: var(--color-accent);">
+                    Graphic Speciality
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="mobile-submenu">
+                    <a href="covering-papers.html" class="submenu-link">Covering Papers</a>
+                    <a href="colored-boards.html" class="submenu-link">Colored Boards</a>
+                    <a href="white-cream.html" class="submenu-link">White & Cream</a>
+                    <a href="kraft.html" class="submenu-link" style="color: var(--color-accent);">Kraft</a>
+                    <a href="black-recycled.html" class="submenu-link">Black & Recycled</a>
+                    <a href="textures.html" class="submenu-link">Textures</a>
+                    <a href="recycled-papers.html" class="submenu-link">Recycled Papers</a>
+                    <a href="art-papers.html" class="submenu-link">Art Papers</a>
+                    <a href="premium-print.html" class="submenu-link">Premium Print</a>
+                    <a href="textured-finish.html" class="submenu-link">Textured Finish</a>
+                    <a href="coated-specialty.html" class="submenu-link">Coated Specialty</a>
+                </div>
+            </div>
+
+            <!-- Labels Accordion -->
+            <div class="overlay-item mobile-dropdown">
+                <button class="overlay-link">
+                    Labels
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="mobile-submenu">
+                    <a href="products.html#paper-labels" class="submenu-link">Paper Labels</a>
+                    <a href="products.html#film-labels" class="submenu-link">Film Labels</a>
+                    <a href="products.html#special-labels" class="submenu-link">Special Labels</a>
+                </div>
+            </div>
+
+            <div class="overlay-item">
+                <a href="applications.html" class="overlay-link">
+                    Applications
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="overlay-item">
+                <a href="capabilities.html" class="overlay-link">
+                    Capacity
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="overlay-item">
+                <a href="contact.html" class="overlay-link">
+                    Contact
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="main-wrapper" style="margin-top: 120px;">
+
+        <section class="panel reveal-panel">
+            <span class="label">Graphic Speciality</span>
+            <h1>Kraft</h1>
+            <p>100% virgin pulp industrial papers and boards for high-durability packaging and specialty coatings.</p>
+
+            <div class="product-table-wrapper">
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Weight (GSM)</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Product"><strong>Kraft Board</strong></td>
+                            <td data-label="Weight"><span class="spec-chip">170-440 GSM</span></td>
+                            <td data-label="Details">100% virgin pulp, ideal for rigid packaging</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Product"><strong>Kraft Paper</strong></td>
+                            <td data-label="Weight"><span class="spec-chip">100-300 GSM</span></td>
+                            <td data-label="Details">Special printing/coating applications</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel panel-dark mt-4 reveal-panel" style="text-align: center; padding: 60px 40px;">
+            <h2>Natural Strength.</h2>
+            <div class="flex" style="justify-content: center; gap: 24px; margin-top: 32px;">
+                <a href="contact.html" class="btn btn-white">Request Swatch Book</a>
+                <a href="contact.html" class="btn btn-outline" style="border-color: white; color: white;">Order
+                    Samples</a>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        const isMobile = window.innerWidth < 768;
+        gsap.utils.toArray('.reveal-panel').forEach(panel => {
+            gsap.fromTo(panel,
+                { opacity: 0, y: isMobile ? 20 : 50 },
+                { opacity: 1, y: 0, duration: 1, ease: "power2.out", scrollTrigger: { trigger: panel, start: "top 90%" } }
+            );
+        });
+    </script>
+</body>
+
+</html>

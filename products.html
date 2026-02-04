@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog | LEBA Speciality Papers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <style>
+        /* Catalog Specific Styles */
+        .catalog-section {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .catalog-section:last-child {
+            border-bottom: none;
+        }
+
+        .product-group {
+            margin-bottom: 48px;
+        }
+
+        .product-item {
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .product-item:last-child {
+            border-bottom: none;
+        }
+
+        .variant-table {
+            width: 100%;
+            font-size: 0.85rem;
+            margin-top: 16px;
+            background: #fafafa;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .variant-table th,
+        .variant-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .variant-table th {
+            background: rgba(0, 0, 0, 0.03);
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .variant-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            margin-right: 4px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- FLOATING NAV (DESKTOP) -->
+    <nav class="nav-pill desktop-only">
+        <a href="index.html" class="logo">LEBA PAPERS</a>
+        <div class="nav-item">
+            <a href="company.html" class="nav-link">Company</a>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link" style="color: var(--color-accent);">Products</span>
+            <div class="dropdown-menu">
+                <!-- GRAPHIC SPECIALITY SECTION -->
+                <div class="mega-section">
+                    <div class="mega-title">GRAPHIC SPECIALITY</div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <div class="mega-subheader">Paper & Boards</div>
+                            <div class="mega-list">
+                                <a href="covering-papers.html" class="mega-link">Covering Papers</a>
+                                <a href="colored-boards.html" class="mega-link">Colored Boards</a>
+                                <a href="white-cream.html" class="mega-link">White & Cream</a>
+                                <a href="kraft.html" class="mega-link">Kraft</a>
+                                <a href="black-recycled.html" class="mega-link">Black & Recycled</a>
+                            </div>
+                        </div>
+                        <div class="mega-col">
+                            <div class="mega-subheader">Textures & Art</div>
+                            <div class="mega-list">
+                                <a href="textures.html" class="mega-link">Textures</a>
+                                <a href="recycled-papers.html" class="mega-link">Recycled Papers</a>
+                                <a href="art-papers.html" class="mega-link">Art Papers</a>
+                            </div>
+                        </div>
+                        <div class="mega-col">
+                            <div class="mega-subheader">Premium & Print</div>
+                            <div class="mega-list">
+                                <a href="premium-print.html" class="mega-link">Premium Print</a>
+                                <a href="textured-finish.html" class="mega-link">Textured Finish</a>
+                                <a href="coated-specialty.html" class="mega-link">Coated Specialty</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LABELS SECTION -->
+                <div class="mega-section">
+                    <div class="mega-title">LABELS</div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <div class="mega-subheader">Label Solutions</div>
+                            <div class="mega-list">
+                                <a href="products.html#paper-labels" class="mega-link">Paper Labels</a>
+                                <a href="products.html#film-labels" class="mega-link">Film Labels</a>
+                                <a href="products.html#special-labels" class="mega-link">Special Labels</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a href="applications.html" class="nav-link">Applications</a>
+        </div>
+        <div class="nav-item">
+            <a href="capabilities.html" class="nav-link">Capacity</a>
+        </div>
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.8rem;">Contact</a>
+    </nav>
+
+    <!-- MOBILE HEADER & OVERLAY (Refined Accordion) -->
+    <header class="mobile-header">
+        <a href="index.html" class="logo-mobile">LEBA PAPERS</a>
+        <button class="hamburger-btn" aria-label="Open Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" x2="21" y1="6" y2="6"></line>
+                <line x1="3" x2="21" y1="12" y2="12"></line>
+                <line x1="3" x2="21" y1="18" y2="18"></line>
+            </svg>
+        </button>
+    </header>
+
+    <div class="mobile-nav-overlay">
+        <div class="nav-overlay-header">
+            <span class="logo-mobile">LEBA PAPERS</span>
+            <button class="close-btn" aria-label="Close Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" x2="6" y1="6" y2="18"></line>
+                    <line x1="6" x2="18" y1="6" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="overlay-menu">
+            <div class="overlay-item">
+                <a href="company.html" class="overlay-link">
+                    Company
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Graphic Speciality Accordion -->
+            <div class="overlay-item mobile-dropdown is-expanded">
+                <button class="overlay-link" style="color: var(--color-accent);">
+                    Graphic Speciality
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="mobile-submenu">
+                    <a href="covering-papers.html" class="submenu-link">Covering Papers</a>
+                    <a href="colored-boards.html" class="submenu-link">Colored Boards</a>
+                    <a href="white-cream.html" class="submenu-link">White & Cream</a>
+                    <a href="kraft.html" class="submenu-link">Kraft</a>
+                    <a href="black-recycled.html" class="submenu-link">Black & Recycled</a>
+                    <a href="textures.html" class="submenu-link">Textures</a>
+                    <a href="recycled-papers.html" class="submenu-link">Recycled Papers</a>
+                    <a href="art-papers.html" class="submenu-link">Art Papers</a>
+                    <a href="premium-print.html" class="submenu-link">Premium Print</a>
+                    <a href="textured-finish.html" class="submenu-link">Textured Finish</a>
+                    <a href="coated-specialty.html" class="submenu-link">Coated Specialty</a>
+                </div>
+            </div>
+
+            <!-- Labels Accordion -->
+            <div class="overlay-item mobile-dropdown">
+                <button class="overlay-link">
+                    Labels
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="mobile-submenu">
+                    <a href="products.html#paper-labels" class="submenu-link" style="color: var(--color-accent);">Paper
+                        Labels</a>
+                    <a href="products.html#film-labels" class="submenu-link">Film Labels</a>
+                    <a href="products.html#special-labels" class="submenu-link">Special Labels</a>
+                </div>
+            </div>
+
+            <div class="overlay-item">
+                <a href="applications.html" class="overlay-link">
+                    Applications
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="overlay-item">
+                <a href="capabilities.html" class="overlay-link">
+                    Capacity
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="overlay-item">
+                <a href="contact.html" class="overlay-link">
+                    Contact
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="main-wrapper">
+
+        <!-- HERO PANEL -->
+        <section class="panel panel-dark reveal-panel">
+            <div class="grid grid-2" style="align-items: center;">
+                <div>
+                    <span class="label">Product Catalog</span>
+                    <h1>Technical Specifications</h1>
+                    <p style="opacity: 0.8;">Complete reference of graphic speciality papers and label stocks.
+                        Data reflects current export-grade manufacturing standards.</p>
+                </div>
+                <div
+                    style="height: 200px; background: #2a3330; border-radius: 24px; position: relative; overflow: hidden;">
+                    <!-- Abstract Paper Stack Graphic -->
+                    <div
+                        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: 2px; background: rgba(255,255,255,0.1); box-shadow: 0 -10px 0 rgba(255,255,255,0.1), 0 10px 0 rgba(255,255,255,0.1), 0 -20px 0 rgba(255,255,255,0.05), 0 20px 0 rgba(255,255,255,0.05);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORY 1: GRAPHIC SPECIALITY -->
+        <section class="panel mt-4 reveal-panel">
+            <div class="grid grid-2"
+                style="margin-bottom: 40px; border-bottom: 2px solid var(--color-primary); padding-bottom: 24px;">
+                <div>
+                    <span class="label">Category 01</span>
+                    <h2 style="margin-bottom: 0;">Graphic Speciality</h2>
+                </div>
+                <div style="display: flex; align-items: end; justify-content: end;">
+                    <p style="margin-bottom: 0; text-align: right; font-size: 0.9rem;">
+                        Substrates for packaging, commercial print,<br>and premium publishing.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 1.1 Covering -->
+            <div class="catalog-section">
+                <h3 style="color: var(--color-secondary);">1.1 Covering Materials</h3>
+                <div class="grid grid-2">
+                    <div class="product-item">
+                        <h4>Matt Plain</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">Mixed fibre construction with
+                            high tensile folding strength. Plain matt surface optimized for post-process finishing.</p>
+                        <table class="variant-table">
+                            <tr>
+                                <th>Finish</th>
+                                <td>Plain Matt</td>
+                            </tr>
+                            <tr>
+                                <th>GSM</th>
+                                <td>120</td>
+                            </tr>
+                            <tr>
+                                <th>Size (cm)</th>
+                                <td>71x102, 76x102</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="product-item">
+                        <h4>Buckram</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">Fine textured paper with high
+                            durability and bulk. Designed for automatic machine capability.</p>
+                        <table class="variant-table">
+                            <tr>
+                                <th>Finish</th>
+                                <td>Matt, Fine Texture</td>
+                            </tr>
+                            <tr>
+                                <th>GSM</th>
+                                <td>120</td>
+                            </tr>
+                            <tr>
+                                <th>Size (cm)</th>
+                                <td>71x102, 76x102</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="product-item">
+                        <h4>Classy Covers</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">Embossed covering material for
+                            binders and folders. Engineered for scuff resistance and lightfastness.</p>
+                        <table class="variant-table">
+                            <tr>
+                                <th>Finish</th>
+                                <td>Embossed</td>
+                            </tr>
+                            <tr>
+                                <th>GSM</th>
+                                <td>120</td>
+                            </tr>
+                            <tr>
+                                <th>Size (cm)</th>
+                                <td>72x102</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1.2 Colored Board -->
+            <div class="catalog-section">
+                <h3 style="color: var(--color-secondary);">1.2 Colored Board</h3>
+                <div class="grid grid-2">
+                    <div class="product-item">
+                        <h4>Burano</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">Smooth, vibrant coloured boards
+                            compatible with foil blocking and screen printing. Pure black option available.</p>
+                        <table class="variant-table">
+                            <tr>
+                                <th>Finish</th>
+                                <td>Smooth</td>
+                            </tr>
+                            <tr>
+                                <th>GSM</th>
+                                <td>250 (Select colors up to 320)</td>
+                            </tr>
+                            <tr>
+                                <th>Size (cm)</th>
+                                <td>70x100, 72x101</td>
+                            </tr>
+                            <tr>
+                                <th>Colors</th>
+                                <td>Orange, Bordeaux, Red, Pink, Tobacco, Coffee, Graphite, Cobalt, Nero, Green</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="product-item">
+                        <h4>Sumo</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">Solid tinted high-caliper boards
+                            with consistent internal colour distribution.</p>
+                        <table class="variant-table">
+                            <tr>
+                                <th>Finish</th>
+                                <td>Solid Tint</td>
+                            </tr>
+                            <tr>
+                                <th>Thickness</th>
+                                <td>1.0mm (700gsm), 1.5mm (1050gsm)</td>
+                            </tr>
+                            <tr>
+                                <th>Size (cm)</th>
+                                <td>71x101</td>
+                            </tr>
+                            <tr>
+                                <th>Colors</th>
+                                <td>White, Black, Brown, Red, Dark Grey, Dark Blue</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1.3 White & Cream -->
+            <div class="catalog-section">
+                <h3 style="color: var(--color-secondary);">1.3 White & Cream</h3>
+                <div class="grid grid-2">
+                    <div class="product-item">
+                        <h4>Eco Series</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">Smooth surface papers
+                            recommended for digital printing applications.</p>
+                        <table class="variant-table">
+                            <tr>
+                                <th>Variant</th>
+                                <th>Size (cm)</th>
+                                <th>GSM</th>
+                            </tr>
+                            <tr>
+                                <td>Eco Cream</td>
+                                <td>64x92, 67x98, 71x102</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>Eco White</td>
+                                <td>Various Standard</td>
+                                <td>300, 350</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="product-item">
+                        <h4>Biancoflash</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">Calendered smooth paper
+                            available in bright white, natural, and ivory profiles.</p>
+                        <table class="variant-table">
+                            <tr>
+                                <th>Grade</th>
+                                <th>GSM Range</th>
+                            </tr>
+                            <tr>
+                                <td>Master</td>
+                                <td>120, 280, 320</td>
+                            </tr>
+                            <tr>
+                                <td>Natural</td>
+                                <td>120, 300, 350, 400</td>
+                            </tr>
+                            <tr>
+                                <td>Ivory</td>
+                                <td>120, 250, 300</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1.4 Kraft -->
+            <div class="catalog-section">
+                <h3 style="color: var(--color-secondary);">1.4 Kraft Papers</h3>
+                <div class="product-item" style="width: 100%;">
+                    <h4>Virgin Kraft Board & Paper</h4>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">100% virgin-quality pulp substrates
+                        for special printing and coating applications.</p>
+                    <table class="variant-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>GSM Range</th>
+                                <th>Sizes (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Kraft Board</td>
+                                <td>170, 200, 250, 280, 340, 400, 440</td>
+                                <td>63.5x91.5, 71x102</td>
+                            </tr>
+                            <tr>
+                                <td>Kraft Paper</td>
+                                <td>100, 300</td>
+                                <td>63.5x91.5, 72x102</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 1.5 Black & Recycled -->
+            <div class="catalog-section">
+                <h3 style="color: var(--color-secondary);">1.5 Black & Recycled</h3>
+                <div class="grid grid-2">
+                    <div class="product-item">
+                        <h4>Brilliant Black</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">100% recycled, chlorine-free,
+                            acid-free black board with high stiffness.</p>
+                        <table class="variant-table">
+                            <tr>
+                                <th>GSM Options</th>
+                                <td>90, 120, 250, 300, 350</td>
+                            </tr>
+                            <tr>
+                                <th>Sizes (cm)</th>
+                                <td>63.5x92, 71x102, 76x102</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="product-item">
+                        <h4>Shiro Echo Raw Black</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">100% recycled material for
+                            sustainable packaging.</p>
+                        <table class="variant-table">
+                            <tr>
+                                <th>Note</th>
+                                <td>Recycled content verified</td>
+                            </tr>
+                            <tr>
+                                <th>GSM Options</th>
+                                <td>300, 350, 550</td>
+                            </tr>
+                            <tr>
+                                <th>Size (cm)</th>
+                                <td>72x102</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1.6 Textures -->
+            <div class="catalog-section">
+                <h3 style="color: var(--color-secondary);">1.6 Textured Boards</h3>
+                <div class="product-item">
+                    <h4>Patterned Series</h4>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">Array of 22 unique textured surfaces
+                        for offset and digital applications.</p>
+                    <div style="font-size: 0.85rem; padding: 12px; background: #f0f0f0; border-radius: 4px;">
+                        <strong>GSM:</strong> 300<br>
+                        <strong>Standard Sizes:</strong> 71x102 cm, 67x98 cm, 64x92 cm
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1.7 Recycled Papers -->
+            <div class="catalog-section">
+                <h3 style="color: var(--color-secondary);">1.7 Recycled & Eco Papers</h3>
+                <div class="grid grid-2">
+                    <div class="product-item">
+                        <h4>Shiro Echo</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">100% post-consumer recycled
+                            waste. Carbon offset production. Biodegradable.</p>
+                        <table class="variant-table">
+                            <tr>
+                                <th>Color</th>
+                                <th>GSM Range</th>
+                            </tr>
+                            <tr>
+                                <td>White</td>
+                                <td>200, 250, 300</td>
+                            </tr>
+                            <tr>
+                                <td>Bright White</td>
+                                <td>90, 120, 250, 300</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="product-item">
+                        <h4>Crush Corn</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">Contains 15% agro-industrial
+                            by-products replacing virgin tree pulp.</p>
+                        <table class="variant-table">
+                            <tr>
+                                <th>Size (cm)</th>
+                                <td>72x102</td>
+                            </tr>
+                            <tr>
+                                <th>GSM</th>
+                                <td>250</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1.8 Art Papers -->
+            <div class="catalog-section">
+                <h3 style="color: var(--color-secondary);">1.8 Fine Art Papers</h3>
+                <div class="product-item">
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">Cellulose and cotton blends.
+                        Acid-free and mould-resistant.</p>
+                    <table class="variant-table">
+                        <tr>
+                            <th>Blend</th>
+                            <th>Finish</th>
+                            <th>GSM</th>
+                        </tr>
+                        <tr>
+                            <td>20% Cotton</td>
+                            <td>Rough Grain</td>
+                            <td>240</td>
+                        </tr>
+                        <tr>
+                            <td>35% Cotton</td>
+                            <td>Rough Grain</td>
+                            <td>300</td>
+                        </tr>
+                        <tr>
+                            <td>60% Cotton</td>
+                            <td>Cloud Felt-mark</td>
+                            <td>300</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 1.9 Hi Print -->
+            <div class="catalog-section">
+                <h3 style="color: var(--color-secondary);">1.9 Commercial Print</h3>
+                <div class="grid grid-2">
+                    <div class="product-item">
+                        <h4>Vintage</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">Virgin pulp with natural rough
+                            surface and high bulk.</p>
+                        <table class="variant-table">
+                            <tr>
+                                <th>Shade</th>
+                                <th>GSM Range</th>
+                            </tr>
+                            <tr>
+                                <td>White</td>
+                                <td>100 - 330</td>
+                            </tr>
+                            <tr>
+                                <td>Ivory</td>
+                                <td>100 - 260</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="product-item">
+                        <h4>Influience</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">Pigmented natural paper for
+                            enhanced print resolution.</p>
+                        <table class="variant-table">
+                            <tr>
+                                <th>Shade</th>
+                                <th>GSM Range</th>
+                            </tr>
+                            <tr>
+                                <td>White</td>
+                                <td>120 - 320</td>
+                            </tr>
+                            <tr>
+                                <td>Ivory</td>
+                                <td>120 - 270</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1.10 Laid & Felt -->
+            <div class="catalog-section">
+                <h3 style="color: var(--color-secondary);">1.10 Laid & Felt Mark</h3>
+                <div class="grid grid-2">
+                    <div class="product-item">
+                        <h4>Hammer / Prisma / Twill</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">Specialty textured finishes for
+                            stationery and packaging.</p>
+                        <ul style="font-size: 0.85rem; padding-left: 20px; color: #555;">
+                            <li>Hammer: Unique hammered texture</li>
+                            <li>Prisma: Felt-marked two sides</li>
+                            <li>Twill: Linear felt-marked</li>
+                        </ul>
+                    </div>
+                    <div class="product-item">
+                        <h4>Contact Laid</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">Classic laid range, virgin ECF
+                            pulp.</p>
+                        <table class="variant-table">
+                            <tr>
+                                <th>Shade</th>
+                                <th>GSM Options</th>
+                            </tr>
+                            <tr>
+                                <td>White</td>
+                                <td>120, 220, 300</td>
+                            </tr>
+                            <tr>
+                                <td>Ivory</td>
+                                <td>120, 220, 300</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1.11 Coated -->
+            <div class="catalog-section">
+                <h3 style="color: var(--color-secondary);">1.11 Coating & Metallic</h3>
+                <div class="grid grid-2">
+                    <div class="product-item">
+                        <h4>Majestic</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">Shimmering pearlescent and
+                            metallic surfaces.</p>
+                        <table class="variant-table">
+                            <tr>
+                                <th>Variant</th>
+                                <th>Note</th>
+                            </tr>
+                            <tr>
+                                <td>Marble White/Cream</td>
+                                <td>120, 250, 290 gsm</td>
+                            </tr>
+                            <tr>
+                                <td>Ice/White Gold</td>
+                                <td>70x100cm</td>
+                            </tr>
+                            <tr>
+                                <td>Copper/Gold/Silver</td>
+                                <td>120, 250 gsm</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="product-item">
+                        <h4>Tube</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 12px;">Smooth velvety tactile surface.
+                        </p>
+                        <table class="variant-table">
+                            <tr>
+                                <th>Color</th>
+                                <th>GSM Options</th>
+                            </tr>
+                            <tr>
+                                <td>Black</td>
+                                <td>120, 260, 310</td>
+                            </tr>
+                            <tr>
+                                <td>Marrone</td>
+                                <td>120, 340</td>
+                            </tr>
+                            <tr>
+                                <td>Petrol</td>
+                                <td>340</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </section> <!-- End Graphic Speciality -->
+
+
+        <!-- CATEGORY 2: LABELS -->
+        <section class="panel mt-4 reveal-panel">
+            <div class="grid grid-2"
+                style="margin-bottom: 40px; border-bottom: 2px solid var(--color-primary); padding-bottom: 24px;">
+                <div>
+                    <span class="label">Category 02</span>
+                    <h2 style="margin-bottom: 0;">Label Materials</h2>
+                </div>
+                <div style="display: flex; align-items: end; justify-content: end;">
+                    <p style="margin-bottom: 0; text-align: right; font-size: 0.9rem;">
+                        Pressure-sensitive constructions.<br>Paper, film, and specialist face stocks.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                style="background: #f4f4f4; padding: 16px; border-radius: 8px; font-size: 0.8rem; margin-bottom: 32px; color: #666;">
+                <strong>Key for Reference:</strong> SCK = Super Calendered Kraft | CCK = Clay Coated Kraft | ML =
+                Maplitho | C1S = Coated One Side
+            </div>
+
+            <!-- 2.1 Paper Labels -->
+            <div class="catalog-section" id="paper-labels">
+                <h3 style="color: var(--color-secondary);">2.1 Paper Labels</h3>
+
+                <table class="variant-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Product Family</th>
+                            <th style="width: 35%;">Construction Variant</th>
+                            <th>Description / Spec</th>
+                            <th style="width: 15%;">Format</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Maplitho (ML)</strong><br><span style="font-weight:400; color:#666;">Uncoated
+                                    Woodfree</span></td>
+                            <td>
+                                70/50 CCK<br>
+                                70/70 SCK
+                            </td>
+                            <td>Technical label stock.<br>Base: Clay Coated / SCK</td>
+                            <td>20"x30"</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chromo (C1S)</strong><br><span style="font-weight:400; color:#666;">Coated One
+                                    Side</span></td>
+                            <td>
+                                80/60 G<br>
+                                80/70 SCK<br>
+                                80/100 CCK
+                            </td>
+                            <td>Standard coated label stock.</td>
+                            <td>20"x30"<br>Custom</td>
+                        </tr>
+                        <tr>
+                            <td><strong>High Gloss (HMC)</strong><br><span style="font-weight:400; color:#666;">Mirror
+                                    Finish</span></td>
+                            <td>
+                                80/70 SCK<br>
+                                80/100 CCK
+                            </td>
+                            <td>High gloss face stock.</td>
+                            <td>20"x30"</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cast Coated (MC)</strong></td>
+                            <td>
+                                85/70 SCK<br>
+                                85/100 CCK
+                            </td>
+                            <td>High-gloss cast coated surface.</td>
+                            <td>20"x30"</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fluorescent (FL)</strong></td>
+                            <td>
+                                Light Yellow / 70 SCK<br>
+                                Green, Pink, Orange, Yellow
+                            </td>
+                            <td>Vibrant signal colors.</td>
+                            <td>20"x30"</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Metals</strong></td>
+                            <td>
+                                Gold / 70 SCK<br>
+                                Met Silver / 70 SCK
+                            </td>
+                            <td>Foil laminated appearance.</td>
+                            <td>20"x30"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 2.2 Film Labels -->
+            <div class="catalog-section" id="film-labels">
+                <h3 style="color: var(--color-secondary);">2.2 Film Labels</h3>
+                <table class="variant-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Product Family</th>
+                            <th style="width: 35%;">Construction Variant</th>
+                            <th>Features</th>
+                            <th style="width: 15%;">Format</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>PVC Clear</strong></td>
+                            <td>
+                                PVC Clear / 60 G<br>
+                                PVC Clear / 140 CCK
+                            </td>
+                            <td>Transparent vinyl film.</td>
+                            <td>Custom / 20"x30"</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Synthetic (PP)</strong></td>
+                            <td>
+                                Syn Gloss / 60 G<br>
+                                Syn Matt / 140 CCK
+                            </td>
+                            <td>Tear-resistant, water-resistant.</td>
+                            <td>Custom / 20"x30"</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Polyester (PET)</strong></td>
+                            <td>
+                                Poly Clear<br>
+                                Poly Opaque (Gloss/Matt)<br>
+                                Poly Silver Matt
+                            </td>
+                            <td>High durability, heat resistance.</td>
+                            <td>Custom / 20"x30"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 2.3 Special Labels -->
+            <div class="catalog-section" id="special-labels">
+                <h3 style="color: var(--color-secondary);">2.3 Specialist Constructions</h3>
+                <table class="variant-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Category</th>
+                            <th style="width: 35%;">Construction</th>
+                            <th>Application Focus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Removable</strong></td>
+                            <td>Removable 80/50<br>C1S Removable</td>
+                            <td>Non-permanent adhesion.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Piggy Back</strong></td>
+                            <td>C1S 80/60 G Piggy Back</td>
+                            <td>Double-layer label systems.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Eco-Friendly</strong></td>
+                            <td>C1S 80/100 CCK Eco</td>
+                            <td>Sustainable face stock options.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kraft / Black</strong></td>
+                            <td>Kraft / 100 CCK<br>Black / 70 SCK</td>
+                            <td>Natural/Dark aesthetic labeling.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="panel panel-dark mt-4" style="text-align: center; padding: 80px 40px;">
+            <h2 style="margin-bottom: 40px;">Request Technical Datasheets</h2>
+            <div class="flex" style="justify-content: center; gap: 24px; margin-bottom: 60px;">
+                <a href="contact.html" class="btn btn-primary">Contact Sales</a>
+                <a href="contact.html" class="btn btn-outline"
+                    style="color: white; border-color: rgba(255,255,255,0.2);">Sample Request</a>
+            </div>
+
+            <div class="grid grid-4"
+                style="text-align: left; opacity: 0.6; font-size: 0.85rem; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <div>
+                    <strong>LEBA Speciality Papers</strong><br>
+                    Ayyanthole P.O, Thrissur<br>
+                    Kerala, India
+                </div>
+                <div>
+                    <strong>Catalog</strong><br>
+                    Graphic Speciality<br>
+                    Technical Labels<br>
+                    Consumables
+                </div>
+                <div>
+                    <strong>Contact</strong><br>
+                    lebapapers@gmail.com<br>
+                    +91 93 88 555 999
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        const isMobile = window.innerWidth < 768;
+        gsap.utils.toArray('.reveal-panel').forEach(panel => {
+            gsap.fromTo(panel,
+                { opacity: 0, y: isMobile ? 20 : 50 },
+                { opacity: 1, y: 0, duration: 1, ease: "power2.out", scrollTrigger: { trigger: panel, start: "top 90%" } }
+            );
+        });
+    </script>
+</body>
+
+</html>

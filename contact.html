@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | LEBA Speciality Papers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- FLOATING NAV (DESKTOP) -->
+    <nav class="nav-pill desktop-only">
+        <a href="index.html" class="logo">LEBA PAPERS</a>
+        <div class="nav-item">
+            <a href="company.html" class="nav-link">Company</a>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Products</span>
+            <div class="dropdown-menu">
+                <!-- GRAPHIC SPECIALITY SECTION -->
+                <div class="mega-section">
+                    <div class="mega-title">GRAPHIC SPECIALITY</div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <div class="mega-subheader">Paper & Boards</div>
+                            <div class="mega-list">
+                                <a href="covering-papers.html" class="mega-link">Covering Papers</a>
+                                <a href="colored-boards.html" class="mega-link">Colored Boards</a>
+                                <a href="white-cream.html" class="mega-link">White & Cream</a>
+                                <a href="kraft.html" class="mega-link">Kraft</a>
+                                <a href="black-recycled.html" class="mega-link">Black & Recycled</a>
+                            </div>
+                        </div>
+                        <div class="mega-col">
+                            <div class="mega-subheader">Textures & Art</div>
+                            <div class="mega-list">
+                                <a href="textures.html" class="mega-link">Textures</a>
+                                <a href="recycled-papers.html" class="mega-link">Recycled Papers</a>
+                                <a href="art-papers.html" class="mega-link">Art Papers</a>
+                            </div>
+                        </div>
+                        <div class="mega-col">
+                            <div class="mega-subheader">Premium & Print</div>
+                            <div class="mega-list">
+                                <a href="premium-print.html" class="mega-link">Premium Print</a>
+                                <a href="textured-finish.html" class="mega-link">Textured Finish</a>
+                                <a href="coated-specialty.html" class="mega-link">Coated Specialty</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LABELS SECTION -->
+                <div class="mega-section">
+                    <div class="mega-title">LABELS</div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <div class="mega-subheader">Label Solutions</div>
+                            <div class="mega-list">
+                                <a href="products.html#paper-labels" class="mega-link">Paper Labels</a>
+                                <a href="products.html#film-labels" class="mega-link">Film Labels</a>
+                                <a href="products.html#special-labels" class="mega-link">Special Labels</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a href="applications.html" class="nav-link">Applications</a>
+        </div>
+        <div class="nav-item">
+            <a href="capabilities.html" class="nav-link">Capacity</a>
+        </div>
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.8rem;">Contact</a>
+    </nav>
+
+    <!-- MOBILE HEADER & OVERLAY (Refined Accordion) -->
+    <header class="mobile-header">
+        <a href="index.html" class="logo-mobile">LEBA PAPERS</a>
+        <button class="hamburger-btn" aria-label="Open Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" x2="21" y1="6" y2="6"></line>
+                <line x1="3" x2="21" y1="12" y2="12"></line>
+                <line x1="3" x2="21" y1="18" y2="18"></line>
+            </svg>
+        </button>
+    </header>
+
+    <div class="mobile-nav-overlay">
+        <div class="nav-overlay-header">
+            <span class="logo-mobile">LEBA PAPERS</span>
+            <button class="close-btn" aria-label="Close Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" x2="6" y1="6" y2="18"></line>
+                    <line x1="6" x2="18" y1="6" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="overlay-menu">
+            <div class="overlay-item">
+                <a href="company.html" class="overlay-link">
+                    Company
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Graphic Speciality Accordion -->
+            <div class="overlay-item mobile-dropdown">
+                <button class="overlay-link">
+                    Graphic Speciality
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="mobile-submenu">
+                    <a href="covering-papers.html" class="submenu-link">Covering Papers</a>
+                    <a href="colored-boards.html" class="submenu-link">Colored Boards</a>
+                    <a href="white-cream.html" class="submenu-link">White & Cream</a>
+                    <a href="kraft.html" class="submenu-link">Kraft</a>
+                    <a href="black-recycled.html" class="submenu-link">Black & Recycled</a>
+                    <a href="textures.html" class="submenu-link">Textures</a>
+                    <a href="recycled-papers.html" class="submenu-link">Recycled Papers</a>
+                    <a href="art-papers.html" class="submenu-link">Art Papers</a>
+                    <a href="premium-print.html" class="submenu-link">Premium Print</a>
+                    <a href="textured-finish.html" class="submenu-link">Textured Finish</a>
+                    <a href="coated-specialty.html" class="submenu-link">Coated Specialty</a>
+                </div>
+            </div>
+
+            <!-- Labels Accordion -->
+            <div class="overlay-item mobile-dropdown">
+                <button class="overlay-link">
+                    Labels
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="mobile-submenu">
+                    <a href="products.html#paper-labels" class="submenu-link">Paper Labels</a>
+                    <a href="products.html#film-labels" class="submenu-link">Film Labels</a>
+                    <a href="products.html#special-labels" class="submenu-link">Special Labels</a>
+                </div>
+            </div>
+
+            <div class="overlay-item">
+                <a href="applications.html" class="overlay-link">
+                    Applications
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="overlay-item">
+                <a href="capabilities.html" class="overlay-link">
+                    Capacity
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="overlay-item">
+                <a href="contact.html" class="overlay-link" style="color: var(--color-accent);">
+                    Contact
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="main-wrapper">
+
+        <!-- CONTACT SPLIT PANEL -->
+        <section class="grid grid-2 reveal-panel">
+
+            <!-- INFO SIDE -->
+            <div class="panel panel-dark" style="display: flex; flex-direction: column; justify-content: center;">
+                <span class="label">Inquiries</span>
+                <h1>Start the Conversation.</h1>
+                <p style="opacity: 0.8; margin-bottom: 40px;">Direct access to our export sales team. We typically
+                    respond to technical inquiries within 12 hours.</p>
+
+                <div class="mt-8">
+                    <h4 style="color: white; margin-bottom: 16px;">Corporate Office</h4>
+                    <p style="font-size: 0.9rem; opacity: 0.7; line-height: 1.6;">
+                        <strong>Anto K Peter</strong><br><br>
+                        G-01, Multi storied Industrial Gala<br>
+                        Puzhakkalpadam, Phase – 1<br>
+                        Ayyanthole P.O, Thrissur – 680553<br>
+                        Kerala, India
+                    </p>
+                </div>
+                <div class="mt-8">
+                    <h4 style="color: white; margin-bottom: 16px;">Contact Endpoints</h4>
+                    <p style="font-size: 0.95rem; line-height: 2;">
+                        <a href="mailto:lebapapers@gmail.com"
+                            style="color: white; border-bottom: 1px solid rgba(255,255,255,0.2);">lebapapers@gmail.com</a><br>
+                        <a href="tel:+919388555999" style="color: white;">+91 93 88 555 999</a><br>
+                        <a href="https://wa.me/919388555999" target="_blank"
+                            style="display: inline-flex; align-items: center; gap: 8px; color: #25D366; font-weight: 500; margin-top: 8px;">
+                            <span style="width: 8px; height: 8px; background: currentColor; border-radius: 50%;"></span>
+                            WhatsApp Direct
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- FORM SIDE -->
+            <div class="panel">
+                <form onsubmit="event.preventDefault(); alert('Message routed to export team.');">
+                    <div class="form-group">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-input" placeholder="Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Company Email</label>
+                        <input type="email" class="form-input" placeholder="name@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Interest</label>
+                        <select class="form-input">
+                            <option>Request Quotation (Container)</option>
+                            <option>Request Samples</option>
+                            <option>Technical Data Sheet</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-textarea" placeholder="Describe your material requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send
+                        Message</button>
+                </form>
+            </div>
+
+        </section>
+
+        <!-- FOOTER PANEL -->
+        <footer class="panel panel-dark mt-4" style="text-align: center; padding: 80px 40px;">
+            <div class="grid grid-4" style="text-align: left; opacity: 0.6; font-size: 0.85rem;">
+                <div><strong>LEBA Speciality Papers</strong><br>Kerala, India</div>
+                <div><strong>Links</strong><br><a href="products.html">Products</a></div>
+                <div><strong>Legal</strong><br>Privacy Policy</div>
+                <div>
+                    <a href="mailto:lebapapers@gmail.com">lebapapers@gmail.com</a><br>
+                    <a href="tel:+919388555999">+91 93 88 555 999</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        const isMobile = window.innerWidth < 768;
+        gsap.utils.toArray('.reveal-panel').forEach(panel => {
+            gsap.fromTo(panel,
+                { opacity: 0, y: isMobile ? 20 : 50, scale: isMobile ? 0.99 : 0.98 },
+                { opacity: 1, y: 0, scale: 1, duration: isMobile ? 0.8 : 1.2, ease: "power2.out", delay: isMobile ? 0 : 0.2, scrollTrigger: { trigger: panel, start: "top 90%" } }
+            );
+        });
+    </script>
+</body>
+
+</html>

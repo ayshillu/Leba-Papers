@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEBA Speciality Papers | Engineered Substrates</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+
+    <!-- FLOATING NAV -->
+    <!-- FLOATING NAV (DESKTOP) -->
+    <nav class="nav-pill desktop-only">
+        <a href="index.html" class="logo">LEBA PAPERS</a>
+        <div class="nav-item">
+            <a href="company.html" class="nav-link">Company</a>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Products</span>
+            <div class="dropdown-menu">
+                <!-- GRAPHIC SPECIALITY SECTION -->
+                <div class="mega-section">
+                    <div class="mega-title">GRAPHIC SPECIALITY</div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <div class="mega-subheader">Paper & Boards</div>
+                            <div class="mega-list">
+                                <a href="covering-papers.html" class="mega-link">Covering Papers</a>
+                                <a href="colored-boards.html" class="mega-link">Colored Boards</a>
+                                <a href="white-cream.html" class="mega-link">White & Cream</a>
+                                <a href="kraft.html" class="mega-link">Kraft</a>
+                                <a href="black-recycled.html" class="mega-link">Black & Recycled</a>
+                            </div>
+                        </div>
+                        <div class="mega-col">
+                            <div class="mega-subheader">Textures & Art</div>
+                            <div class="mega-list">
+                                <a href="textures.html" class="mega-link">Textures</a>
+                                <a href="recycled-papers.html" class="mega-link">Recycled Papers</a>
+                                <a href="art-papers.html" class="mega-link">Art Papers</a>
+                            </div>
+                        </div>
+                        <div class="mega-col">
+                            <div class="mega-subheader">Premium & Print</div>
+                            <div class="mega-list">
+                                <a href="premium-print.html" class="mega-link">Premium Print</a>
+                                <a href="textured-finish.html" class="mega-link">Textured Finish</a>
+                                <a href="coated-specialty.html" class="mega-link">Coated Specialty</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LABELS SECTION -->
+                <div class="mega-section">
+                    <div class="mega-title">LABELS</div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <div class="mega-subheader">Label Solutions</div>
+                            <div class="mega-list">
+                                <a href="products.html#paper-labels" class="mega-link">Paper Labels</a>
+                                <a href="products.html#film-labels" class="mega-link">Film Labels</a>
+                                <a href="products.html#special-labels" class="mega-link">Special Labels</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a href="applications.html" class="nav-link">Applications</a>
+        </div>
+        <div class="nav-item">
+            <a href="capabilities.html" class="nav-link">Capacity</a>
+        </div>
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.8rem;">Contact</a>
+    </nav>
+
+    <!-- MOBILE HEADER (Top Bar) -->
+    <header class="mobile-header">
+        <a href="index.html" class="logo-mobile">LEBA PAPERS</a>
+        <button class="hamburger-btn" aria-label="Open Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" x2="21" y1="6" y2="6"></line>
+                <line x1="3" x2="21" y1="12" y2="12"></line>
+                <line x1="3" x2="21" y1="18" y2="18"></line>
+            </svg>
+        </button>
+    </header>
+
+    <!-- MOBILE NAVIGATION OVERLAY -->
+    <div class="mobile-nav-overlay">
+        <div class="nav-overlay-header">
+            <span class="logo-mobile">LEBA PAPERS</span>
+            <button class="close-btn" aria-label="Close Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" x2="6" y1="6" y2="18"></line>
+                    <line x1="6" x2="18" y1="6" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="overlay-menu">
+            <div class="overlay-item">
+                <a href="company.html" class="overlay-link">
+                    Company
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Graphic Speciality Accordion -->
+            <div class="overlay-item mobile-dropdown">
+                <button class="overlay-link">
+                    Graphic Speciality
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="mobile-submenu">
+                    <a href="covering-papers.html" class="submenu-link">Covering Papers</a>
+                    <a href="colored-boards.html" class="submenu-link">Colored Boards</a>
+                    <a href="white-cream.html" class="submenu-link">White & Cream</a>
+                    <a href="kraft.html" class="submenu-link">Kraft</a>
+                    <a href="black-recycled.html" class="submenu-link">Black & Recycled</a>
+                    <a href="textures.html" class="submenu-link">Textures</a>
+                    <a href="recycled-papers.html" class="submenu-link">Recycled Papers</a>
+                    <a href="art-papers.html" class="submenu-link">Art Papers</a>
+                    <a href="premium-print.html" class="submenu-link">Premium Print</a>
+                    <a href="textured-finish.html" class="submenu-link">Textured Finish</a>
+                    <a href="coated-specialty.html" class="submenu-link">Coated Specialty</a>
+                </div>
+            </div>
+
+            <!-- Labels Accordion -->
+            <div class="overlay-item mobile-dropdown">
+                <button class="overlay-link">
+                    Labels
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="mobile-submenu">
+                    <a href="products.html#paper-labels" class="submenu-link">Paper Labels</a>
+                    <a href="products.html#film-labels" class="submenu-link">Film Labels</a>
+                    <a href="products.html#special-labels" class="submenu-link">Special Labels</a>
+                </div>
+            </div>
+
+            <div class="overlay-item">
+                <a href="applications.html" class="overlay-link">
+                    Applications
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="overlay-item">
+                <a href="capabilities.html" class="overlay-link">
+                    Capacity
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="overlay-item">
+                <a href="contact.html" class="overlay-link">
+                    Contact
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        // EXISTING THREE.JS & GSAP SCRIPTS
+        const container = document.body;
+    </script>
+
+
+    <!-- HERO SECTION (Full Bleed) -->
+    <section class="panel panel-hero-modern reveal-panel">
+        <div class="grid grid-2" style="align-items: center; min-height: 80vh;">
+            <!-- Text Content -->
+            <div class="hero-content">
+                <span class="label">Mining & Refractory</span>
+                <h1>Semirom Refractory<br>Mining Company</h1>
+                <p>Symbol of effort, self-belief and quality production. Accompanied by advanced refractory
+                    industries: domestic and export industries of Iran.</p>
+                <div class="flex gap-4">
+                    <a href="products.html" class="btn btn-outline">Our Products</a>
+                    <a href="company.html" class="btn btn-outline">About Us</a>
+                </div>
+
+                <div class="hero-stats mt-8 flex gap-8">
+                    <div>
+                        <strong style="font-size: 2rem; display: block; line-height: 1;">+26</strong>
+                        <span style="font-size: 0.8rem; opacity: 0.6;">Years Experience</span>
+                    </div>
+                    <div>
+                        <strong style="font-size: 2rem; display: block; line-height: 1;">+80</strong>
+                        <span style="font-size: 0.8rem; opacity: 0.6;">Global Clients</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image (Organic Shape) -->
+            <div class="hero-image-container relative">
+                <img src="hero_print_sheets.png" alt="Mining Site" class="hero-img-shaped">
+                <!-- Overlay or decorative elements can go here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- WRAPPER -->
+    <div class="main-wrapper">
+
+        <!-- MISSION & VISION SECTION (Image 4 Reference) -->
+        <section class="panel mt-4 reveal-panel" style="background-color: transparent;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2>Mission & Vision</h2>
+                <p style="margin: 0 auto; opacity: 0.6;">What we do today builds the future of the refractory industry.
+                </p>
+            </div>
+
+            <div class="grid grid-4 mission-grid">
+                <!-- Item 1 -->
+                <div class="mission-item">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                    </div>
+                    <h3>Mission</h3>
+                    <p>Production and supply of quality refractory products from final mine to final product.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="mission-item">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                            <path d="M12 17h.01" />
+                        </svg>
+                    </div>
+                    <h3>Vision</h3>
+                    <p>To be positioned as a leading brand in the refractory industry in Iran and the Middle East.</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="mission-item">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v20" />
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <h3>Values</h3>
+                    <p>Quality, transparency, innovation and commitment to environment. Long term partnership.</p>
+                </div>
+                <!-- Item 4 -->
+                <div class="mission-item">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="2" x2="22" y1="12" y2="12" />
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        </svg>
+                    </div>
+                    <h3>Goals</h3>
+                    <p>Increasing production capacity. Promoting quality. Expanding global markets.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT CATEGORIES (Image 2 Reference) -->
+        <section class="panel mt-4 reveal-stagger">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <span class="label">Our Products</span>
+                <h2>Expanded Product Range</h2>
+                <p style="margin: 0 auto; opacity: 0.6;">Variety of refractory products to meet industrial needs.</p>
+            </div>
+
+            <div class="grid grid-3">
+                <a href="products.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1590248386348-154941940984?q=80&w=2670&auto=format&fit=crop"
+                        alt="Bricks">
+                    <div class="category-overlay">
+                        <h3>Bricks</h3>
+                    </div>
+                </a>
+                <a href="products.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1617154238530-589943615438?q=80&w=2574&auto=format&fit=crop"
+                        alt="Mortars">
+                    <div class="category-overlay">
+                        <h3>Mortars & Masses</h3>
+                    </div>
+                </a>
+                <a href="products.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1579201502446-2489e2401f81?q=80&w=2670&auto=format&fit=crop"
+                        alt="Raw Materials">
+                    <div class="category-overlay">
+                        <h3>Raw Materials</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- LATEST NEWS / PRODUCTS (Image 1 Reference) -->
+        <section class="panel mt-4 reveal-stagger">
+            <div class="flex justify-between" style="margin-bottom: 32px; align-items: flex-end;">
+                <div>
+                    <span class="label">Blog</span>
+                    <h2>Latest News</h2>
+                    <p style="margin-bottom: 0;">Follow our latest updates.</p>
+                </div>
+                <a href="#" class="btn btn-outline" style="font-size: 0.9rem;">View All</a>
+            </div>
+
+            <div class="grid grid-3">
+                <!-- Card 1 -->
+                <a href="#" class="card-modern">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1590248386348-154941940984?q=80&w=2670&auto=format&fit=crop"
+                            alt="Brick">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span>News</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                                <line x1="16" x2="16" y1="2" y2="6" />
+                                <line x1="8" x2="8" y1="2" y2="6" />
+                                <line x1="3" x2="21" y1="10" y2="10" />
+                            </svg>
+                        </div>
+                        <h3>Recycling Bricks and Refractory Materials in the Steel Industry</h3>
+                        <div class="card-action">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="7" x2="17" y1="17" y2="7" />
+                                <polyline points="7 7 17 7 17 17" />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="#" class="card-modern">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1546252924-42f2ed142a7a?q=80&w=2670&auto=format&fit=crop"
+                            alt="Refractory">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span>News</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                                <line x1="16" x2="16" y1="2" y2="6" />
+                                <line x1="8" x2="8" y1="2" y2="6" />
+                                <line x1="3" x2="21" y1="10" y2="10" />
+                            </svg>
+                        </div>
+                        <h3>Which firebrick and refractory brick is suitable?</h3>
+                        <div class="card-action">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="7" x2="17" y1="17" y2="7" />
+                                <polyline points="7 7 17 7 17 17" />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="#" class="card-modern">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1622466986616-e41d8d21226d?q=80&w=2670&auto=format&fit=crop"
+                            alt="Construction">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span>News</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                                <line x1="16" x2="16" y1="2" y2="6" />
+                                <line x1="8" x2="8" y1="2" y2="6" />
+                                <line x1="3" x2="21" y1="10" y2="10" />
+                            </svg>
+                        </div>
+                        <h3>Best-selling Refractory Bricks in the Market</h3>
+                        <div class="card-action">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="7" x2="17" y1="17" y2="7" />
+                                <polyline points="7 7 17 7 17 17" />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- FOOTER PANEL -->
+    </div>
+
+    <!-- FOOTER PANEL (Full Bleed) -->
+    <footer class="panel panel-dark mt-4"
+        style="text-align: center; padding: 60px 40px; border-radius: 0; margin-bottom: 0;">
+        <!-- Subscribe Section (Image 1 Ref) -->
+        <div
+            style="background: transparent; border-radius: 20px; padding: 40px; margin-bottom: 60px; display: flex; flex-direction: column; align-items: center;">
+            <h2 style="margin-bottom: 16px;">Receive Latest News & Events</h2>
+            <p style="opacity: 0.7; margin-bottom: 24px;">Enter your email to join our newsletter.</p>
+
+            <div class="flex"
+                style="width: 100%; max-width: 500px; background: white; padding: 6px; border-radius: 50px;">
+                <input type="email" placeholder="Enter your email address"
+                    style="border: none; background: transparent; padding: 12px 24px; flex-grow: 1; outline: none; font-size: 1rem;">
+                <button class="btn btn-primary" style="padding: 12px 32px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" x2="12" y1="19" y2="5" />
+                        <polyline points="5 12 12 5 19 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-4"
+            style="text-align: left; opacity: 0.8; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px;">
+            <div style="grid-column: span 1;">
+                <strong style="display: block; font-size: 1.2rem; margin-bottom: 16px;">Semirom Refractory</strong>
+                <p style="opacity: 0.6; line-height: 1.6; max-width: 250px;">
+                    Over two decades of experience in extraction and production of refractory products.
+                </p>
+                <div class="flex gap-4 mt-4" style="opacity: 0.7;">
+                    <!-- Social Icons -->
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                        </svg></a>
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg></a>
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg></a>
+                </div>
+            </div>
+
+            <div>
+                <strong>Contact Info</strong><br><br>
+                <span style="opacity: 0.6;">Tehran, Yousef Abad, Ibn Sina St.</span><br>
+                <span style="opacity: 0.6;">Phone: 021-88556293</span><br>
+                <span style="opacity: 0.6;">Email: info@semirom.mine.com</span>
+            </div>
+
+            <div>
+                <strong>Quick Links</strong><br><br>
+                <a href="products.html" style="opacity: 0.6;">Products</a><br>
+                <a href="company.html" style="opacity: 0.6;">About Us</a><br>
+                <a href="#" style="opacity: 0.6;">Certificates</a>
+            </div>
+
+            <div>
+                <!-- Logo or Extra content -->
+                <a href="#" class="logo" style="color: white; border:none; font-size: 1.5rem;">SEMIROM</a>
+            </div>
+        </div>
+
+        <div
+            style="margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.75rem; opacity: 0.4;">
+            © 2026 Semirom Refractory Mining Co. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // THREE.JS GRID ANIMATION
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 200;
+
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.domElement.id = 'grid-canvas';
+        renderer.domElement.style.position = 'fixed';
+        renderer.domElement.style.top = '0';
+        renderer.domElement.style.left = '0';
+        renderer.domElement.style.width = '100vw';
+        renderer.domElement.style.height = '100vh';
+        renderer.domElement.style.zIndex = '-2';
+        renderer.domElement.style.pointerEvents = 'none';
+        document.body.appendChild(renderer.domElement);
+
+        const gridColor = new THREE.Color('#CCCCCC');
+        const gridSize = Math.max(window.innerWidth, window.innerHeight);
+        const divisions = 40;
+        const gridLines = [];
+
+        for (let i = -gridSize / 2; i <= gridSize / 2; i += gridSize / divisions) {
+            const material = new THREE.LineBasicMaterial({ color: gridColor, transparent: true, opacity: 0.15 });
+            const points = [new THREE.Vector3(i, -gridSize / 2, 0), new THREE.Vector3(i, gridSize / 2, 0)];
+            const geometry = new THREE.BufferGeometry().setFromPoints(points);
+            const line = new THREE.Line(geometry, material);
+            scene.add(line);
+        }
+        for (let j = -gridSize / 2; j <= gridSize / 2; j += gridSize / divisions) {
+            const material = new THREE.LineBasicMaterial({ color: gridColor, transparent: true, opacity: 0.15 });
+            const points = [new THREE.Vector3(-gridSize / 2, j, 0), new THREE.Vector3(gridSize / 2, j, 0)];
+            const geometry = new THREE.BufferGeometry().setFromPoints(points);
+            const line = new THREE.Line(geometry, material);
+            scene.add(line);
+        }
+
+        renderer.render(scene, camera);
+        window.addEventListener('resize', () => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.render(scene, camera);
+        });
+
+        // GSAP Initialization
+        gsap.registerPlugin(ScrollTrigger);
+        const isMobile = window.innerWidth < 768;
+        const animConfig = isMobile ? { y: 20, duration: 0.8, scale: 0.99 } : { y: 50, duration: 1.2, scale: 0.98 };
+
+        // Rest of the reveal animations
+
+        gsap.utils.toArray('.reveal-panel').forEach(panel => {
+            gsap.fromTo(panel,
+                { opacity: 0, y: animConfig.y, scale: animConfig.scale },
+                {
+                    opacity: 1, y: 0, scale: 1,
+                    duration: animConfig.duration,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: panel,
+                        start: isMobile ? "top 95%" : "top 85%"
+                    }
+                }
+            );
+        });
+
+        gsap.from(".reveal-stagger > *", {
+            opacity: 0,
+            y: isMobile ? 15 : 30,
+            duration: isMobile ? 0.6 : 0.8,
+            stagger: 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".reveal-stagger",
+                start: "top 80%"
+            }
+        });
+    </script>
+</body>
+
+</html>

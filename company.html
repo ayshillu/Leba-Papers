@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile | LEBA Speciality Papers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+    <!-- FLOATING NAV (DESKTOP) -->
+    <nav class="nav-pill desktop-only">
+        <a href="index.html" class="logo">LEBA PAPERS</a>
+        <div class="nav-item">
+            <a href="company.html" class="nav-link" style="color: var(--color-accent);">Company</a>
+        </div>
+        <div class="nav-item">
+            <span class="nav-link">Products</span>
+            <div class="dropdown-menu">
+                <!-- GRAPHIC SPECIALITY SECTION -->
+                <div class="mega-section">
+                    <div class="mega-title">GRAPHIC SPECIALITY</div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <div class="mega-subheader">Paper & Boards</div>
+                            <div class="mega-list">
+                                <a href="covering-papers.html" class="mega-link">Covering Papers</a>
+                                <a href="colored-boards.html" class="mega-link">Colored Boards</a>
+                                <a href="white-cream.html" class="mega-link">White & Cream</a>
+                                <a href="kraft.html" class="mega-link">Kraft</a>
+                                <a href="black-recycled.html" class="mega-link">Black & Recycled</a>
+                            </div>
+                        </div>
+                        <div class="mega-col">
+                            <div class="mega-subheader">Textures & Art</div>
+                            <div class="mega-list">
+                                <a href="textures.html" class="mega-link">Textures</a>
+                                <a href="recycled-papers.html" class="mega-link">Recycled Papers</a>
+                                <a href="art-papers.html" class="mega-link">Art Papers</a>
+                            </div>
+                        </div>
+                        <div class="mega-col">
+                            <div class="mega-subheader">Premium & Print</div>
+                            <div class="mega-list">
+                                <a href="premium-print.html" class="mega-link">Premium Print</a>
+                                <a href="textured-finish.html" class="mega-link">Textured Finish</a>
+                                <a href="coated-specialty.html" class="mega-link">Coated Specialty</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LABELS SECTION -->
+                <div class="mega-section">
+                    <div class="mega-title">LABELS</div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <div class="mega-subheader">Label Solutions</div>
+                            <div class="mega-list">
+                                <a href="products.html#paper-labels" class="mega-link">Paper Labels</a>
+                                <a href="products.html#film-labels" class="mega-link">Film Labels</a>
+                                <a href="products.html#special-labels" class="mega-link">Special Labels</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a href="applications.html" class="nav-link">Applications</a>
+        </div>
+        <div class="nav-item">
+            <a href="capabilities.html" class="nav-link">Capacity</a>
+        </div>
+        <a href="contact.html" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.8rem;">Contact</a>
+    </nav>
+
+    <!-- MOBILE HEADER & OVERLAY (Refined Accordion) -->
+    <header class="mobile-header">
+        <a href="index.html" class="logo-mobile">LEBA PAPERS</a>
+        <button class="hamburger-btn" aria-label="Open Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" x2="21" y1="6" y2="6"></line>
+                <line x1="3" x2="21" y1="12" y2="12"></line>
+                <line x1="3" x2="21" y1="18" y2="18"></line>
+            </svg>
+        </button>
+    </header>
+
+    <div class="mobile-nav-overlay">
+        <div class="nav-overlay-header">
+            <span class="logo-mobile">LEBA PAPERS</span>
+            <button class="close-btn" aria-label="Close Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" x2="6" y1="6" y2="18"></line>
+                    <line x1="6" x2="18" y1="6" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="overlay-menu">
+            <div class="overlay-item">
+                <a href="company.html" class="overlay-link" style="color: var(--color-accent);">
+                    Company
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Graphic Speciality Accordion -->
+            <div class="overlay-item mobile-dropdown">
+                <button class="overlay-link">
+                    Graphic Speciality
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="mobile-submenu">
+                    <a href="covering-papers.html" class="submenu-link">Covering Papers</a>
+                    <a href="colored-boards.html" class="submenu-link">Colored Boards</a>
+                    <a href="white-cream.html" class="submenu-link">White & Cream</a>
+                    <a href="kraft.html" class="submenu-link">Kraft</a>
+                    <a href="black-recycled.html" class="submenu-link">Black & Recycled</a>
+                    <a href="textures.html" class="submenu-link">Textures</a>
+                    <a href="recycled-papers.html" class="submenu-link">Recycled Papers</a>
+                    <a href="art-papers.html" class="submenu-link">Art Papers</a>
+                    <a href="premium-print.html" class="submenu-link">Premium Print</a>
+                    <a href="textured-finish.html" class="submenu-link">Textured Finish</a>
+                    <a href="coated-specialty.html" class="submenu-link">Coated Specialty</a>
+                </div>
+            </div>
+
+            <!-- Labels Accordion -->
+            <div class="overlay-item mobile-dropdown">
+                <button class="overlay-link">
+                    Labels
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="mobile-submenu">
+                    <a href="products.html#paper-labels" class="submenu-link">Paper Labels</a>
+                    <a href="products.html#film-labels" class="submenu-link">Film Labels</a>
+                    <a href="products.html#special-labels" class="submenu-link">Special Labels</a>
+                </div>
+            </div>
+
+            <div class="overlay-item">
+                <a href="applications.html" class="overlay-link">
+                    Applications
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="overlay-item">
+                <a href="capabilities.html" class="overlay-link">
+                    Capacity
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="overlay-item">
+                <a href="contact.html" class="overlay-link">
+                    Contact
+                    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="main-wrapper">
+
+        <!-- HERO PANEL -->
+        <section class="panel panel-dark reveal-panel">
+            <div class="grid grid-2" style="align-items: center; min-height: 50vh;">
+                <div>
+                    <span class="label">Corporate Profile</span>
+                    <h1>Manufacturing-First<br>Supply Chain.</h1>
+                    <p style="font-size: 1.15rem; opacity: 0.9;">
+                        LEBA Speciality Papers bridges Chinese manufacturing scale with international service standards.
+                        We are not traders; we are industrial supply partners.
+                    </p>
+                </div>
+                <div
+                    style="height: 400px; background: #2a3330; border-radius: 24px; position: relative; overflow: hidden;">
+                    <!-- Abstract Factory Image -->
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2670&auto=format&fit=crop"
+                        style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8; filter: contrast(1.1);">
+                </div>
+            </div>
+        </section>
+
+        <!-- INTRO PANEL -->
+        <section class="panel mt-4 reveal-panel">
+            <div class="grid grid-2">
+                <div>
+                    <h2>Application-Driven Approach</h2>
+                    <p>We understand that printing and packaging are precision industries where substrate consistency is
+                        critical. Our product development is driven by the real-world needs of commercial printers,
+                        packaging converters, and industrial users.</p>
+                </div>
+                <div>
+                    <p>We prioritize print compatibility and process stability over promotional claims. Situated in the
+                        Yantai Free Trade Zone, our facility is engineered for export efficiency, allowing us to serve
+                        30+ countries with distinct logistical advantages.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MILESTONES GRID -->
+        <section class="grid grid-4 mt-4 reveal-stagger">
+            <div class="card-module">
+                <div class="card-body">
+                    <span class="label"
+                        style="color: var(--color-accent); margin-bottom: 16px; display:block;">Philosophy</span>
+                    <h3>Consistency</h3>
+                    <p style="font-size: 0.9rem;">Minimizing variance between lots to support automated production
+                        lines.</p>
+                </div>
+            </div>
+            <div class="card-module">
+                <div class="card-body">
+                    <span class="label"
+                        style="color: var(--color-accent); margin-bottom: 16px; display:block;">Supply</span>
+                    <h3>Reliability</h3>
+                    <p style="font-size: 0.9rem;">Long-term volume allocation and fixed delivery schedules for partners.
+                    </p>
+                </div>
+            </div>
+            <div class="card-module">
+                <div class="card-body">
+                    <span class="label"
+                        style="color: var(--color-accent); margin-bottom: 16px; display:block;">Compliance</span>
+                    <h3>Export Ready</h3>
+                    <p style="font-size: 0.9rem;">Full ISO documentation and customs compliance for global trade.</p>
+                </div>
+            </div>
+            <div class="card-module">
+                <div class="card-body">
+                    <span class="label"
+                        style="color: var(--color-accent); margin-bottom: 16px; display:block;">Support</span>
+                    <h3>Technical</h3>
+                    <p style="font-size: 0.9rem;">Direct access to lab data and material specifications.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER PANEL -->
+        <footer class="panel panel-dark mt-4" style="text-align: center; padding: 80px 40px;">
+            <h2 style="margin-bottom: 40px;">Partner with LEBA.</h2>
+            <div class="flex" style="justify-content: center; gap: 24px; margin-bottom: 60px;">
+                <a href="contact.html" class="btn btn-primary">Start Inquiry</a>
+            </div>
+            <div class="grid grid-4"
+                style="text-align: left; opacity: 0.6; font-size: 0.85rem; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <div>
+                    <strong>LEBA Speciality Papers</strong><br>
+                    Ayyanthole P.O, Thrissur<br>
+                    Kerala, India
+                </div>
+                <div>
+                    <strong>Products</strong><br>
+                    <a href="products.html">Digital & Commercial</a><br>
+                    <a href="products.html">Premium Texture</a><br>
+                    <a href="products.html">Sticker & Label</a>
+                </div>
+                <div>
+                    <strong>Legal</strong><br>
+                    Terms of Service<br>
+                    Privacy Policy
+                </div>
+                <div>
+                    <a href="mailto:lebapapers@gmail.com">lebapapers@gmail.com</a><br>
+                    <a href="tel:+919388555999">+91 93 88 555 999</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        const isMobile = window.innerWidth < 768;
+        gsap.utils.toArray('.reveal-panel').forEach(panel => {
+            gsap.fromTo(panel,
+                { opacity: 0, y: isMobile ? 20 : 50, scale: isMobile ? 0.99 : 0.98 },
+                { opacity: 1, y: 0, scale: 1, duration: isMobile ? 0.8 : 1.2, ease: "power2.out", delay: isMobile ? 0 : 0.2, scrollTrigger: { trigger: panel, start: "top 90%" } }
+            );
+        });
+        gsap.from(".reveal-stagger > *", {
+            opacity: 0,
+            y: isMobile ? 15 : 30,
+            duration: isMobile ? 0.6 : 0.8,
+            stagger: 0.1,
+            ease: "power2.out",
+            delay: isMobile ? 0.1 : 0.5
+        });
+    </script>
+</body>
+
+</html>

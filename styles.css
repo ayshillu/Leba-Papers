@@ -1,0 +1,1454 @@
+/* 
+   LEBA DESIGN SYSTEM 2026 - REVISION 3 (FINAL OVERRIDE)
+   Reference: Organic Industrial / Soft Floating Panels
+   Tone: Calm, Handcrafted, Engineered, "Placed" Surfaces
+*/
+
+:root {
+  /* PALETTE - Reference: Semirom Mining (Dark Green/Industrial) */
+  --bg-canvas: #f8f9fa;
+  /* Clean light grey/white */
+  --bg-surface: #ffffff;
+  --bg-contrast: #1a1a1a;
+  /* Darker black/grey */
+
+  --color-primary: #1a1a1a;
+  --color-secondary: #555555;
+  --color-text-body: #4a4a4a;
+  --color-text-light: #ffffff;
+
+  --color-accent: #1e4620;
+  /* Deep Green from reference */
+  --color-accent-hover: #163618;
+  --color-border: #e0e0e0;
+
+  /* SHAPES & DEPTH */
+  --radius-xl: 0px;
+  /* Brutalist/Industrial */
+  --radius-lg: 0px;
+  /* Card rounds */
+  --radius-md: 0px;
+  --radius-sm: 0px;
+
+  --shadow-soft: none;
+  --shadow-card: none;
+  --shadow-float: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+
+  /* TYPOGRAPHY */
+  --font-main: 'Inter', sans-serif;
+  --leading-loose: 1.6;
+  --tracking-wide: -0.01em;
+}
+
+/* RESET & BASE */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--color-text-body);
+  font-family: var(--font-main);
+  line-height: var(--leading-loose);
+  letter-spacing: var(--tracking-wide);
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  /* Outer frame removed for full bleed */
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+/* UTILITY GRID */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-4 {
+  gap: 16px;
+}
+
+.gap-8 {
+  gap: 32px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mt-8 {
+  margin-top: 32px;
+}
+
+.mt-12 {
+  margin-top: 64px;
+}
+
+.h-full {
+  height: 100%;
+}
+
+/* WRAPPER (Previously inline) */
+.main-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* PANEL SYSTEM (The Core of this Design) */
+.panel {
+  background: transparent;
+  /* Content sits on grid */
+  backdrop-filter: none;
+  border-radius: 0;
+  /* No radius needed for invisible box */
+  padding: 60px 0;
+  /* Keep vertical spacing, remove horizontal container padding likely handled by grid/wrapper */
+  box-shadow: none;
+  position: relative;
+  overflow: visible;
+  /* Let content breathe */
+  border: none;
+}
+
+.main-wrapper .panel {
+  /* Ensure internal panels aligning with wrapper don't push in too much if padding was key */
+  /* padding: 60px; -> removed above. Using 60px 0 might need wrapper check. */
+  /* The .panel was adding 60px padding. The .main-wrapper has 20px padding. 
+       If we remove .panel padding, text hits edge? 
+       Let's keep vertical padding, reduce horizontal if wrapper handles it, or keep it.
+       If visual box is gone, large padding might look weirdly indented. 
+       Let's try standardizing. */
+  padding: 40px 0;
+}
+
+.panel-dark {
+  background: var(--bg-contrast);
+  /* Keep dark panels opaque or slight tranparency? */
+  /* User likely wants grid between sections, or behind light sections. 
+     Reference 'section in middle of hero and footer'. 
+     Hero is full bleed image (covers grid). 
+     Footer is opaque black (covers grid).
+     Middle sections are white panels. 
+     Let's make them frosty. */
+  color: var(--color-text-light);
+  border: none;
+}
+
+.panel-hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom-left-radius: var(--radius-xl);
+  border-bottom-right-radius: var(--radius-xl);
+  /* Top corners might be sharp if sticking to nav, or rounded if floating. Reference implies float. */
+  margin-bottom: 24px;
+}
+
+/* TYPOGRAPHY */
+h1 {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-primary);
+  margin-bottom: 32px;
+}
+
+h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+  margin-bottom: 24px;
+}
+
+.panel-dark h1,
+.panel-dark h2,
+.panel-dark h3 {
+  color: var(--color-text-light);
+}
+
+.panel-dark p {
+  color: rgba(242, 242, 239, 0.7);
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+p {
+  max-width: 60ch;
+  font-size: 1.05rem;
+  margin-bottom: 24px;
+}
+
+.label {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--color-secondary);
+  background: rgba(0, 0, 0, 0.05);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.panel-dark .label {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-light);
+}
+
+/* NAVIGATION (Floating Pill) */
+.nav-pill {
+  position: fixed;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  padding: 8px 32px;
+  border-radius: 100px;
+  box-shadow: var(--shadow-float);
+  z-index: 1000;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+/* Mega-Menu Styling */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: white;
+  width: max-content;
+  min-width: 800px;
+  padding: 40px;
+  border-radius: 0;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  z-index: 1001;
+  border: 1px solid #eee;
+}
+
+.mega-section {
+  padding: 24px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mega-section:first-child {
+  padding-top: 0;
+}
+
+.mega-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.mega-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+.mega-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.mega-subheader {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.mega-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mega-link {
+  font-size: 0.9rem;
+  color: #666;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.mega-link:hover {
+  color: var(--color-accent);
+  padding-left: 4px;
+}
+
+.nav-item:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* MOBILE HEADER */
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px 24px;
+  background: white;
+  z-index: 2000;
+  justify-content: space-between;
+  align-items: center;
+
+  .mobile-dropdown {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-submenu {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .submenu-link {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    opacity: 0.7;
+  }
+}
+
+.logo-mobile {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
+.hamburger-btn,
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-primary);
+  padding: 4px;
+}
+
+/* REDESIGNED MOBILE NAV OVERLAY (Reference Match) */
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: #f4f8fb;
+  /* Matching light blue-grey from reference */
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+}
+
+.mobile-nav-overlay.is-open {
+  transform: translateX(0);
+}
+
+.nav-overlay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: white;
+  /* Contrast header */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.overlay-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: white;
+}
+
+.overlay-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 18px 24px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #334155;
+  /* Slate 700 */
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.overlay-link .chevron {
+  transition: transform 0.3s ease;
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+}
+
+/* Accordion States */
+.mobile-dropdown.is-expanded>.overlay-link {
+  background: #eff6ff;
+  /* Light blue tint when open */
+  color: #0084ff;
+}
+
+.mobile-dropdown.is-expanded .chevron {
+  transform: rotate(180deg);
+}
+
+.mobile-submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  background: #f8fafc;
+}
+
+.mobile-dropdown.is-expanded .mobile-submenu {
+  max-height: 2000px;
+  /* Large enough for full list */
+}
+
+.submenu-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  padding-left: 40px;
+  font-size: 0.95rem;
+  color: #64748b;
+  /* Slate 500 */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.submenu-link:last-child {
+  border-bottom: none;
+}
+
+.submenu-link .arrow-right {
+  opacity: 0.4;
+  width: 16px;
+  height: 16px;
+}
+
+.overlay-link:hover,
+.submenu-link:hover {
+  background: rgba(0, 132, 255, 0.05);
+}
+
+/* DESKTOP/MOBILE VISIBILITY */
+@media (min-width: 769px) {
+
+  .mobile-header,
+  .mobile-nav-overlay {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-header {
+    display: flex;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .main-wrapper {
+    padding-top: 60px !important;
+    /* Adjust for fixed header */
+  }
+
+  .panel-hero-modern {
+    margin-top: 60px;
+    /* Push hero down below fixed header */
+    position: relative;
+    /* Context for absolute text */
+    aspect-ratio: 4/5;
+    min-height: auto;
+  }
+
+  .panel-hero-modern .grid-2 {
+    display: block;
+    height: 100%;
+  }
+
+  /* Make image fill the 4:5 container */
+  .hero-image-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  .hero-img-shaped {
+    width: 100%;
+    height: 100%;
+    /* Force fill */
+    object-fit: cover;
+    margin-top: 0;
+    /* Remove gap */
+    aspect-ratio: auto;
+    /* Let container define ratio */
+  }
+
+  /* Overlay Text */
+  .hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    padding: 24px;
+    color: white;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    /* Full height to justify bottom */
+    pointer-events: none;
+    /* Let clicks pass through if needed, but buttons need events */
+  }
+
+  .hero-content>* {
+    pointer-events: auto;
+    /* Re-enable buttons */
+  }
+
+  .hero-content h1,
+  .hero-content h2,
+  .hero-content p,
+  .hero-content .label {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-content .label {
+    background: rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .hero-stats {
+    display: none;
+    /* Hide stats on mobile overlay to save space/clean look, or keep? Reference is clean. */
+  }
+}
+
+.mobile-menu-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobile-menu-item {
+  position: relative;
+}
+
+.mobile-menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--color-primary);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-menu-link svg {
+  width: 20px;
+  height: 20px;
+  z-index: 2;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Glow Effect */
+.mobile-menu-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--glow-color, var(--color-accent));
+  opacity: 0;
+  transform: scale(0.5);
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mobile-menu-link.active::before,
+.mobile-menu-link:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.mobile-menu-link.active svg,
+.mobile-menu-link:hover svg {
+  color: white;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.nav-link:hover {
+  color: var(--color-accent);
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  padding-right: 24px;
+  border-right: 1px solid var(--color-border);
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 20px;
+  /* Reduced vertical padding further */
+  border-radius: 4px;
+  /* Tighter radius */
+  font-weight: 400;
+  /* Regular weight as requested */
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  font-size: 0.9rem;
+  /* Slightly smaller text */
+}
+
+/* ... existing hover ... */
+
+.btn-primary {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* Specific Gradient for Nav Contact Button */
+.nav-pill .btn-primary {
+  background: linear-gradient(206deg, #dcb0f2 0%, #fa7c45 50%, #db3018 100%);
+  color: white;
+  border: none;
+  /* Keep pill radius or match others? Usually primary actions stay pill, but user said "buttons on grid bg" */
+  /* Keep nav button distinctive. */
+}
+
+/* ... existing dark ... */
+
+.btn-white {
+  background: #ffffff;
+  color: #4a5568;
+  /* Cool Grey Text */
+  border: 1px solid #cbd5e0;
+  /* Lighter Slate Grey Border */
+  border-radius: 4px;
+}
+
+.btn-outline {
+  background: white;
+  border: 1px solid #7e8c9d;
+  /* Match the slate grey more closely, maybe #718096 */
+  /* Actually reference looked like #7e8c9d or #64748b */
+  border: 1px solid #64748b;
+  color: #475569;
+  /* Slate 600 */
+  border-radius: 4px;
+}
+
+/* Button Hover Text/Border */
+.btn-white:hover,
+.btn-outline:hover {
+  background: #ebf5ff;
+  /* Light Blue */
+  color: #0084ff;
+  /* Azure Blue */
+  border-color: #0084ff;
+  transform: translateY(-2px);
+}
+
+/* Specific Heights as requested */
+/* Grid buttons (default small) */
+.btn {
+  height: 22px;
+  padding: 0 16px;
+  /* Horizontal padding only, height handled by flex */
+  font-size: 0.8rem;
+  /* Smaller text for 22px height */
+}
+
+/* Hero buttons override */
+.hero-content .btn {
+  height: 27px;
+  padding: 0 20px;
+  font-size: 0.85rem;
+}
+
+/* Nav button override (keep it usable) */
+.nav-pill .btn {
+  height: auto;
+  padding: 10px 24px;
+  border-radius: 100px;
+  /* Pill Shape */
+  transition: transform 0.3s ease, background 0.3s ease;
+  /* Ensure smooth scale */
+}
+
+.nav-pill .btn:hover {
+  transform: scale(1.02);
+  /* Minimal enlargement (2%) */
+  box-shadow: 0 4px 12px rgba(219, 48, 24, 0.4);
+}
+
+/* CARD MODULES */
+.card-module {
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+  height: 100%;
+  transition: transform 0.4s ease;
+  border: none;
+  box-shadow: none;
+}
+
+.card-module:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-soft);
+}
+
+.card-image {
+  height: 240px;
+  background: #e0e0e0;
+  object-fit: cover;
+  width: 100%;
+}
+
+.card-body {
+  padding: 32px;
+}
+
+/* FORMS */
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 16px;
+  background: #f7f7f7;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.form-textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+/* LABEL / SECTION ID */
+.label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 400;
+  /* Regular */
+  text-transform: uppercase;
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.label::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #0084ff;
+  /* Azure Blue from Vertico ref */
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 8px;
+  font-feature-settings: "tnum";
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* SPEC TABLES */
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+}
+
+.spec-table th {
+  text-align: left;
+  padding: 16px;
+  border-bottom: 2px solid var(--color-border);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  letter-spacing: 0.05em;
+}
+
+.spec-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1024px) {
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-pill {
+    width: 90%;
+    justify-content: space-between;
+    padding: 16px 24px;
+  }
+
+  .nav-link:not(.active) {
+    /* If we want to hide them on tablet, keep this. 
+       But user asked for refinement. On tablet, maybe they fit? 
+       Let's keep the user's implicit "simplified" request, 
+       or at least don't break what's there. 
+       We will Override this in Mobile if needed. */
+    display: none;
+  }
+}
+
+/* MOBILE REFINEMENT (The Primary Request) */
+@media (max-width: 768px) {
+  :root {
+    --radius-xl: 0px;
+    --radius-lg: 0px;
+    --radius-md: 0px;
+  }
+
+  body {
+    padding: 0;
+    /* Tighter frame */
+    font-size: 15px;
+    /* Editorial / Compact */
+    line-height: 1.45;
+    /* Comfortable, not airy */
+  }
+
+  .main-wrapper {
+    padding-top: 80px !important;
+    /* Reduced top spacing */
+  }
+
+  /* PANEL DENSITY */
+  .panel {
+    padding: 24px 20px;
+    /* Reduced vertical padding significantly */
+    margin-bottom: 12px;
+    /* Stack tighter */
+    box-shadow: none;
+    /* Flatter look on mobile */
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .panel-hero {
+    min-height: auto;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    border-radius: 0px !important;
+  }
+
+  /* TYPOGRAPHY OVERRIDES */
+  h1 {
+    font-size: 2.1rem;
+    /* Reduced scale */
+    margin-bottom: 16px;
+    letter-spacing: -0.04em;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+    margin-bottom: 12px;
+    letter-spacing: -0.03em;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 15px;
+    margin-bottom: 16px;
+    max-width: 100%;
+  }
+
+  .label {
+    font-size: 0.7rem;
+    margin-bottom: 12px;
+    padding: 4px 10px;
+  }
+
+  /* GRID & LAYOUT */
+  .grid {
+    gap: 12px;
+    /* Tighter rhythm */
+  }
+
+  /* Show images, but compact */
+  .card-image {
+    height: 180px;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  /* NAVIGATION COMPACTING */
+  .nav-pill {
+    display: none;
+  }
+
+  .mobile-menu-bar {
+    display: block;
+    width: auto;
+    max-width: 90%;
+  }
+
+  .logo {
+    font-size: 0.85rem;
+    padding-right: 12px;
+    border-right: 1px solid #eee;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+  }
+
+  .nav-link {
+    display: none;
+    /* Ensure text links hide, keep logo + CTA */
+  }
+
+  /* STATS COMPACT */
+  .stat-block {
+    padding: 16px 0;
+    border-left: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .stat-block:last-child {
+    border-bottom: none;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  /* Specific fix for hero flex layout on mobile */
+  .panel-hero .grid-2 {
+    display: flex;
+    flex-direction: column;
+    min-height: auto !important;
+  }
+
+  /* Ensure GSAP elements don't hide if JS fails or for performance */
+  .reveal-panel,
+  .reveal-stagger>* {
+    opacity: 1;
+    /* Fallback for no-js or mobile simplicity */
+  }
+}
+
+/* SPEC TABLE OVERRIDES */
+@media (max-width: 768px) {
+  .spec-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .spec-table th,
+  .spec-table td {
+    padding: 12px 8px;
+    font-size: 0.8rem;
+    /* Matches secondary 13px */
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* NEW COMPONENT STYLES (Semirom Reference)                                   */
+/* -------------------------------------------------------------------------- */
+
+/* HERO MODERN */
+.panel-hero-modern {
+  background: var(--bg-contrast);
+  color: white;
+  min-height: 80vh;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* On desktop, we want padding. On mobile maybe less. */
+@media (min-width: 769px) {
+  .panel-hero-modern {
+    padding: 0;
+  }
+
+  .hero-content {
+    padding: 60px;
+    /* Add padding to text content so it doesn't hit edge */
+  }
+}
+
+.hero-img-shaped {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  /* Organic shape mask or just large radius as per Image 3 */
+  /* If we want the specific blob shape, we'd use clip-path. 
+     The reference image has a large rounded feel. */
+  /* box-shadow: var(--shadow-float); Removed for fitted look */
+  min-height: 500px;
+}
+
+.hero-stats strong {
+  font-feature-settings: "tnum";
+  color: var(--color-accent);
+  /* Green numbers in reference? Or white? */
+  /* Reference has dark background, likely white text. */
+  color: white;
+}
+
+/* MISSION GRID (Image 4) */
+.mission-grid {
+  gap: 40px;
+}
+
+.mission-item {
+  text-align: center;
+  padding: 24px;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  transition: transform 0.3s ease;
+}
+
+.mission-item:hover {
+  transform: translateY(-5px);
+}
+
+.icon-box {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  color: var(--color-accent);
+  /* If icons need background circles: */
+  /* background: rgba(30, 70, 32, 0.1); 
+     border-radius: 50%;
+     display: flex; align-items: center; justify-content: center; */
+}
+
+.mission-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: var(--color-primary);
+}
+
+.mission-item p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-secondary);
+}
+
+
+/* MODERN CARDS (Image 1 / Blog) */
+.card-modern {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  /* Clean look */
+  border-radius: 0;
+  overflow: visible;
+  transition: transform 0.3s ease;
+  box-shadow: none;
+}
+
+.card-modern:hover .card-img-container img {
+  transform: scale(1.05);
+}
+
+.card-img-container {
+  border-radius: var(--radius-lg);
+  /* Rounded images */
+  overflow: hidden;
+  height: 280px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card-content {
+  padding: 0 8px;
+  /* Slight indent */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-secondary);
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.card-modern h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  flex-grow: 1;
+  /* Push action to bottom */
+}
+
+/* Arrow Action */
+.card-action {
+  align-self: flex-start;
+  color: var(--color-accent);
+  transition: transform 0.3s ease;
+}
+
+.card-modern:hover .card-action {
+  transform: translateX(4px) translateY(-4px);
+  /* Diagonal move like reference */
+}
+
+/* MOBILE ADJUSTMENTS FOR NEW COMPONENTS */
+@media (max-width: 768px) {
+  .hero-img-shaped {
+    margin-top: 0;
+  }
+
+  .mission-grid {
+    grid-template-columns: 1fr;
+    /* Stack on mobile */
+    gap: 16px;
+  }
+
+  .card-img-container {
+    height: 200px;
+  }
+
+  /* Force Remove Borders/Backgrounds on Mobile */
+  .mission-item,
+  .card-module,
+  .category-card,
+  .card-modern,
+  .panel {
+    border: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+
+  /* Exception for Footer: Keep it dark and solid */
+  footer.panel,
+  .panel-dark {
+    background: var(--bg-contrast) !important;
+    color: white !important;
+  }
+}
+
+/* PRODUCT CATEGORIES (Image 2) */
+.category-card {
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+  height: 300px;
+  display: block;
+  box-shadow: none;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.1);
+}
+
+.category-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 32px;
+}
+
+.category-card h3 {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: none;
+  margin: 0;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover h3 {
+  transform: translateY(-8px);
+}
+
+/* PRODUCT TABLES */
+.product-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 32px;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.product-table th {
+  padding: 16px;
+  border-bottom: 2px solid var(--color-primary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-secondary);
+}
+
+.product-table td {
+  padding: 20px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 0.95rem;
+}
+
+.product-table tr:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.spec-chip {
+  display: inline-block;
+  padding: 4px 10px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .product-table thead {
+    display: none;
+  }
+
+  .product-table tr {
+    display: block;
+    margin-bottom: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 16px;
+  }
+
+  .product-table td {
+    display: block;
+    padding: 8px 0;
+    border: none;
+  }
+
+  .product-table td:before {
+    content: attr(data-label);
+    font-weight: 600;
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: 4px;
+  }
+}
