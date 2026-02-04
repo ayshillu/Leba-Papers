@@ -259,7 +259,10 @@ def update_html_files():
 
     # Extract Nav and Overlay
     nav_match = re.search(r'(<!-- FLOATING NAV \(DESKTOP\) -->.*?</nav>)', index_content, re.DOTALL)
-    overlay_match = re.search(r'(<!-- MOBILE NAVIGATION OVERLAY -->.*?<div class="mobile-nav-overlay">.*?</nav>\s*</div>)', index_content, re.DOTALL)
+    
+    # Improved regex: Look for the div class "mobile-nav-overlay" until the end of its nav/div structure
+    # Since capturing nested divs with regex is hard, we rely on the specific closing pattern </nav>\s*</div> which seems consistent
+    overlay_match = re.search(r'(<div class="mobile-nav-overlay">.*?</nav>\s*</div>)', index_content, re.DOTALL)
     
     if not nav_match or not overlay_match:
         print("Could not find nav or overlay in index.html")
@@ -277,11 +280,16 @@ def update_html_files():
             with open(file_name, 'r', encoding='utf-8') as f:
                 content = f.read()
             
-            # Replace Desktop Nav
+            # Replace Desktop Nav (Assuming it has the comment)
             content = re.sub(r'(<!-- FLOATING NAV \(DESKTOP\) -->.*?</nav>)', lambda m: new_nav, content, flags=re.DOTALL)
             
-            # Replace Mobile Overlay
+            # Replace Mobile Overlay - Flexible match
+            # Try matching with comment first (old files)
             content = re.sub(r'(<!-- MOBILE NAVIGATION OVERLAY -->.*?<div class="mobile-nav-overlay">.*?</nav>\s*</div>)', lambda m: new_overlay, content, flags=re.DOTALL)
+            
+            # Try matching without comment (newly generated files) if previous didn't change anything?
+            # Actually, just matching the div content is safer if we know the boundary
+            content = re.sub(r'(<div class="mobile-nav-overlay">.*?</nav>\s*</div>)', lambda m: new_overlay, content, flags=re.DOTALL)
             
             with open(file_name, 'w', encoding='utf-8') as f:
                 f.write(content)
