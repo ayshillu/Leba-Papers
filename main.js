@@ -187,18 +187,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Accordion logic
+    // Accordion logic (Level 2)
     dropdowns.forEach(dropdown => {
         const link = dropdown.querySelector('.overlay-link');
         link.addEventListener('click', (e) => {
             e.preventDefault();
-
-            // Close other dropdowns (optional, but cleaner)
-            dropdowns.forEach(other => {
-                if (other !== dropdown) other.classList.remove('is-expanded');
-            });
-
             dropdown.classList.toggle('is-expanded');
         });
+    });
+
+    // Level 3 Mobile Accordion logic
+    const innerDropdowns = document.querySelectorAll(".mobile-dropdown-inner");
+    innerDropdowns.forEach(inner => {
+        const btn = inner.querySelector(".submenu-parent-link");
+        if (btn) {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                inner.classList.toggle("is-open");
+            });
+        }
     });
 });
