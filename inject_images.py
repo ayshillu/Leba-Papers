@@ -152,7 +152,7 @@ def generate_gallery_html(image_folder_path, web_path_base):
         # Flat folder
         for f in os.listdir(image_folder_path):
             if f.lower().endswith(('.jpg', '.jpeg', '.png')):
-                if 'thumb' in f.lower() or 'big' in f.lower(): continue # skip self if mixed?
+                # if 'thumb' in f.lower() or 'big' in f.lower(): continue # REMOVED strict skip
                 title = os.path.splitext(f)[0].replace('-', ' ').title()
                 thumb_path = f"{web_path_base}/{f}"
                 big_path = f"{web_path_base}/{f}"
